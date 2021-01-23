@@ -75,6 +75,15 @@ for name, model in models:
     names.append(name)
     print('%s: %f (%f)' % (name, cv_results.mean(), cv_results.std()))
 
+# Compare Algorithms
+# pyplot.boxplot(results, labels=names)
+# pyplot.title('Algorithm Comparison')
+# pyplot.show()
+
+# Make predictions on validation dataset
+model = SVC(gamma='auto')
+model.fit(X_train, Y_train)
+predictions = model.predict(X_validation)
 
 # Tutorial
 # https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
